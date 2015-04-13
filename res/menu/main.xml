@@ -1,0 +1,32 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:title="إعدادات">
+        <menu>
+            <item
+                android:id="@+id/addZekr"
+                android:orderInCategory="100"
+                android:showAsAction="always"
+                android:title="إضافة ذكر"/>
+             <item
+                android:id="@+id/previewZekr"
+                android:orderInCategory="100"
+                android:showAsAction="always"
+                android:title="عرض الاذكار"/>
+             <item
+                android:id="@+id/addprogram"
+                android:orderInCategory="100"
+                android:showAsAction="always"
+                android:title="إضافة برنامج"/>
+             <item
+                android:id="@+id/previewprogram"
+                android:orderInCategory="100"
+                android:showAsAction="always"
+                android:title="عرض  البرامج"/>
+        </menu>
+    </item>
+
+</menu>

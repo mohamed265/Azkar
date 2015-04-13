@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <issue id="ValidFragment" severity="ignore">
+        <ignore path="src/com/mohamed265AZKAR/azkar/LongPreview.java" />
+        <ignore path="src/com/mohamed265AZKAR/azkar/Zekr_Manipulation.java" />
+        <ignore path="src/com/mohamed265AZKAR/azkar/addZekr.java" />
+    </issue>
+</lint>

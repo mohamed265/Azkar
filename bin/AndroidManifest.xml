@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mohamed265.azkar"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="17" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        
+        <activity
+            android:name="com.mohamed265.azkar.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <activity android:name="com.mohamed265.azkar.PreviewZekr" />
+
+        <service
+            android:name="com.mohamed265.azkar.model.NotificationService"
+            android:enabled="true"
+            android:process=":remote" >
+            <intent-filter>
+                <action android:name="com.mohamed265AZKAR.azkar.azkarDaily" />
+            </intent-filter>
+            >
+        </service>
+
+        <activity
+            android:name="com.mohamed265.azkar.controlar.Program_Manipulation"/>
+      
+        
+        <activity
+            android:name="com.mohamed265.azkar.controlar.Data_Manipulation" />
+        
+    </application>
+
+</manifest>

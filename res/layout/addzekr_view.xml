@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background" >
+
+    <TextView
+        android:id="@+id/descreption_addzekr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/content_addzekr"
+        android:layout_below="@+id/content_addzekr"
+        android:layout_marginTop="23dp"
+        android:text="الشرح"
+        android:textSize="20dip" />
+
+    <TextView
+        android:id="@+id/repettime_addzekr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/descreption_addzekr"
+        android:layout_below="@+id/descreption_addzekr"
+        android:layout_marginTop="28dp"
+        android:text="مرات التكرار"
+        android:textSize="20dip" />
+
+    <EditText
+        android:id="@+id/content_addzekr_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/content_addzekr"
+        android:layout_alignBottom="@+id/content_addzekr"
+        android:layout_toLeftOf="@+id/repettime_addzekr"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:isScrollContainer="true"
+        android:maxHeight="70dp"
+        android:textSize="16dip" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/descrition_addzekr_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/descreption_addzekr"
+        android:layout_alignBottom="@+id/descreption_addzekr"
+        android:layout_toLeftOf="@+id/repettime_addzekr"
+        android:ems="10"
+        android:maxHeight="20dp"
+        android:textSize="16dip" >
+    </EditText>
+
+    <Button
+        android:id="@+id/add_addzekr"
+        android:layout_width="200px"
+        android:layout_height="200px"
+        android:layout_below="@+id/repettime_addzekr_edit"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/plus" />
+
+    <TextView
+        android:id="@+id/content_addzekr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="18dp"
+        android:text="الذكر"
+        android:textSize="20dip" />
+
+    <EditText
+        android:id="@+id/repettime_addzekr_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/repettime_addzekr"
+        android:layout_alignBottom="@+id/repettime_addzekr"
+        android:layout_centerHorizontal="true"
+        android:ems="3"
+        android:inputType="numberSigned" />
+
+</RelativeLayout>

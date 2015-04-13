@@ -1,0 +1,107 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relative_layout_addProgram"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".Program_Manipulation" >
+
+    <ImageView
+        android:id="@+id/hiden"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/iconswap_empt" />
+
+    <ImageView
+        android:id="@+id/first_imageview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/hiden"
+        android:layout_marginRight="1dp"
+        android:layout_toLeftOf="@+id/hiden"
+        android:background="@drawable/iconswap_full" />
+
+    <ImageView
+        android:id="@+id/second_imageview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/hiden"
+        android:layout_marginLeft="1dp"
+        android:layout_toRightOf="@+id/hiden"
+        android:background="@drawable/iconswap_empt" />
+
+    <TextView
+        android:id="@+id/program_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/hiden"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:text="إسم البرنامج"
+        android:textSize="20dip" />
+
+    <EditText
+        android:id="@+id/program_name_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/program_name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="2dp"
+        android:ems="10" >
+
+     
+    </EditText>
+
+    <TextView
+        android:id="@+id/program_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/program_name_edit"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="2dp"
+        android:text="بداية البرنامج"
+        android:textSize="20dip" />
+
+    <TimePicker
+        android:id="@+id/start_time_picker"
+        android:layout_width="wrap_content"
+        android:layout_height="140dp"
+        android:layout_below="@+id/program_start"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="2dp" />
+
+    <TextView
+        android:id="@+id/end_program"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/start_time_picker"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="2dp"
+        android:text="نهاية البرنامج"
+        android:textSize="20dip" />
+
+    <TimePicker
+        android:id="@+id/end_time_picker"
+        android:layout_width="wrap_content"
+        android:layout_height="140dp"
+        android:layout_alignRight="@+id/start_time_picker"
+        android:layout_below="@+id/end_program"
+        android:layout_marginTop="2dp" />
+
+    <ListView
+        android:id="@+id/selected_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignLeft="@+id/program_name_edit"
+        android:layout_alignTop="@+id/program_name" >
+
+    </ListView>
+ 
+
+</RelativeLayout>

@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/ok_done"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:title="تم"/>
+    <item
+        android:id="@+id/ addZekr_addprog"
+        android:orderInCategory="1"
+        android:showAsAction="always"
+        android:title="إضافة ذكر"
+        android:visible="true">
+    </item>
+
+</menu>
