@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.Display;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -62,6 +63,11 @@ public class Program_Manipulation extends Activity implements
 		setContentView(R.layout.activity_add_program);
 		setTitle("≈⁄œ«œ »—‰«„Ã");
 		db = new DataBase(this);
+
+		Display display = getWindowManager().getDefaultDisplay();
+		final int width = display.getWidth();
+		final int height = display.getHeight();
+		// enhance Display
 
 		detector = new SimpleGestureFilter(this, this);
 		first = (ImageView) findViewById(R.id.first_imageview);

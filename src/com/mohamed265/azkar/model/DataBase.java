@@ -393,12 +393,12 @@ public class DataBase extends SQLiteOpenHelper {
 			values.put(KEY_CONFIG_ID, String.valueOf(zcp.ID));
 			values.put(KEY_TIME, String.valueOf(time));
 
-			temp = (zcp.azkar.get(i).repetedTimes + 4) / 5;
+			temp = (zcp.azkar.get(i).repetedTimes + 9) / 10;
 
 			for (int j = 0; j < temp; j++) {
 
 				while (isInDataBase(time, db))
-					time++;
+					time = (time + 1) % zcp.day;
 
 				if (values.containsKey(KEY_TIME))
 					values.remove(KEY_TIME);

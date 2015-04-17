@@ -68,8 +68,8 @@ public class MainActivity extends Activity {
 		new FirstTimeInit(this);
 		db = new DataBase(this);
 		settings = con.getSharedPreferences(PREFS_NAME, 0);
-		//db.addToDataBaseStatistics("11/4/2015", 21);
-		//db.addToDataBaseStatistics("12/4/2015", 489);
+		// db.addToDataBaseStatistics("11/4/2015", 21);
+		// db.addToDataBaseStatistics("12/4/2015", 489);
 
 		Display dis = getWindowManager().getDefaultDisplay();
 		int width = dis.getWidth();
@@ -142,12 +142,12 @@ public class MainActivity extends Activity {
 		adapter = new ArrayAdapter<Statistics>(this,
 				android.R.layout.simple_list_item_1, stList);
 		lv.setAdapter(adapter);
-		
-		List<NotificationObject> arr = db.getAllNotificationObject();
-		
-		for (int i = 0; i < arr.size(); i++) {
-			Log.d("noti", arr.get(i).progName + " " + arr.get(i).zekr.ID);
-		}
+
+		// List<NotificationObject> arr = db.getAllNotificationObject();
+
+		// for (int i = 0; i < arr.size(); i++) {
+		// Log.d("noti", arr.get(i).progName + " " + arr.get(i).zekr.ID);
+		// }
 	}
 
 	@Override
