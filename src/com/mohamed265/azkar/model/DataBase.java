@@ -525,6 +525,15 @@ public class DataBase extends SQLiteOpenHelper {
 		return list;
 	}
 
+	public int getSumStatistics() {
+		ArrayList<Statistics> list = (ArrayList<Statistics>) getAllStatistcs(WITH_TODAY);
+		long average = 0;
+		for (int i = 0; i < list.size(); i++)
+			average += list.get(i).numberOFZekr;
+		return (int) (average);
+
+	}
+
 	public int getAverageStatistics() {
 		ArrayList<Statistics> list = (ArrayList<Statistics>) getAllStatistcs(WITH_TODAY);
 		long average = 0;

@@ -76,7 +76,7 @@ public class MainActivity extends Activity {
 		int height = dis.getHeight();
 
 		pb.setMax(settings.getInt("MaxAverage", 1000));
-		pb.setProgress(db.getAverageStatistics());
+		pb.setProgress(db.getSumStatistics());
 		pb.setLayoutParams(new RelativeLayout.LayoutParams(width / 2 + width
 				/ 8, height / 2));
 		pb.setY(-height / 22);
@@ -84,7 +84,7 @@ public class MainActivity extends Activity {
 		pb.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				String text = "ãÊæÓØ ĞßÑß " + pb.getProgress()
+				String text = "ãÌãæÚ ĞßÑß " + db.getSumStatistics()
 						+ " ÊÎØì ÇáåÏİ ÇáÍÇáì " + pb.getMax();
 				Toast.makeText(con, text, Toast.LENGTH_LONG).show();
 			}
@@ -100,15 +100,15 @@ public class MainActivity extends Activity {
 				countZekr.setText(db.getTodayStatistcs().numberOFZekr + "");
 				num = Integer.valueOf((String) countZekr.getText());
 				times.setText((num < 11 && num != 0 ? "ãÑÇÊ" : "ãÑÉ"));
-				pb.setProgress(db.getAverageStatistics());
+				pb.setProgress(db.getSumStatistics());
 
 				if (pb.getProgress() >= pb.getMax()) {
 					settings.edit()
 							.putInt("MaxAverage", (int) (pb.getMax() * 1.2))
 							.commit();
 					sendNotification((int) (pb.getMax() * 1.2),
-							" áÏíß åÏİ ÌÏíÏ ÏÚ ãÊæÓØ ĞßÑß ÈÊÎØì ",
-							"áŞÏ ÍØãÊ ÇáãÊæÓØ");
+							" áÏíß åÏİ ÌÏíÏ ÏÚ ãÌãæÚ ĞßÑß ÈÊÎØì ",
+							"áŞÏ ÍØãÊ ÇáåÏİ");
 					pb.setMax((int) (pb.getMax() * 1.2));
 				}
 			}

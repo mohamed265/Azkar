@@ -10,6 +10,7 @@ import com.mohamed265.azkar.model.DataBase;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.view.Display;
@@ -25,20 +26,23 @@ public class PreviewZekr extends Activity {
 
 	RelativeLayout rl;
 	DataBase db;
-	TextView zekrDescreption;
+	TextView zekrDescreption, count;
 	Button descreption, addPalm;
 	boolean flagView = false;
 	ArrayList<ImageView> images;
 	Context con = this;
 	Random rand;
+	int count_ = 0;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_notify_message);
 		setTitle("ÐßÑ");
-		db = new DataBase(this);
+
 		rl = (RelativeLayout) findViewById(R.id.notify_message_layout);
+
+		count = new TextView(this);
 
 		rand = new Random();
 
@@ -115,7 +119,7 @@ public class PreviewZekr extends Activity {
 		addPalm = (Button) findViewById(R.id.addpalm);
 		addPalm.setBackgroundResource(R.drawable.up);
 		descreptionWidth = width / 4;
-		addPalm.setX(width / 2 - descreptionWidth / 2);
+		addPalm.setX(width / 2 - width / 5);
 		addPalm.setY(height / 4);
 		addPalm.setLayoutParams(new RelativeLayout.LayoutParams(
 				descreptionWidth, descreptionWidth));
@@ -135,10 +139,18 @@ public class PreviewZekr extends Activity {
 					im.setY(rand.nextInt(low) + low);
 				rl.addView(im, new RelativeLayout.LayoutParams(100, 100));
 				images.add(im);
-				db.addCount(1);
+				count_++;
+				count.setText(count_ + "");
 			}
 		});
 
+		count.setText("0");
+		count.setTextSize(40);
+		count.setX(width / 2 + width / 6);
+		count.setY(width / 2);
+		count.setTextColor(Color.rgb(147, 182, 54));
+
+		rl.addView(count);
 	}
 
 	@Override
@@ -148,4 +160,11 @@ public class PreviewZekr extends Activity {
 		return true;
 	}
 
+	@Override
+	protected void onDestroy() {
+		db = new DataBase(this);
+		db.addCount(count_);
+		db.close();
+		super.onDestroy();
+	}
 }
